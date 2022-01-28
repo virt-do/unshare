@@ -213,7 +213,7 @@ pub unsafe fn child_after_clone(child: &ChildInfo) -> ! {
         }
     }
 
-    libc::execve(
+    libc::execvpe(
         child.filename,
         child.args.as_ptr(),
         // cancelling mutability, it should be fine
